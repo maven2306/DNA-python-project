@@ -6,4 +6,4 @@ dependencies:
   - python=3.11
   - pandas
   - networkx
-  - graphviz
+  - python-graphviz
