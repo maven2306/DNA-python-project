@@ -38,10 +38,8 @@ cd DNA-python-project
 This project uses a specific set of Python packages. The included `environment.yml` file lets you install them all with a single command.
 
 ```bash
-# Create the environment from the file
 conda env create -f environment.yml
 
-# Activate the new environment
 conda activate dna-assembler-env
 ```
 This command creates a new environment named `dna-assembler-env` and installs all necessary libraries (`pandas`, `networkx`, `graphviz`). You must activate this environment every time you work on the project.
