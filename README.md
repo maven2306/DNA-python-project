@@ -26,7 +26,7 @@ Follow these steps to get the project running on your local machine.
 
 ### 1. Clone the Repository
 
-Open your terminal or command prompt and clone this repository:
+Open the Anaconda prompt and clone this repository:
 
 ```bash
 git clone https://github.com/maven2306/DNA-python-project.git
