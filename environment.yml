@@ -1,0 +1,9 @@
+name: dna-assembler-env
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas
+  - networkx
+  - graphviz
