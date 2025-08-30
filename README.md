@@ -29,10 +29,9 @@ Follow these steps to get the project running on your local machine.
 Open your terminal or command prompt and clone this repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/maven2306/DNA-python-project.git
+cd DNA-python-project
 ```
-*(Replace `your-username` and `your-repo-name` with your actual GitHub details)*
 
 ### 2. Create and Activate the Conda Environment
 
