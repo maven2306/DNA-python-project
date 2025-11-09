@@ -11,37 +11,36 @@ import sys
 import os
 import json
 
-# ------------------- PATH SETUP (BEST PRACTICE) -------------------
 
-# Get the absolute path of the directory where this script is located # <-- ADDED
+# Get the absolute path of the directory where this script is located
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
 # TASK 1 Read the csv file given its name
 
 # Default behaviour is to allow the user to enter the DNA_[x]_[x].csv they want
 try:
-    filename_only = sys.argv[1] # <-- MODIFIED (renamed for clarity)
+    filename_only = sys.argv[1] 
 # Handle pytest
 except IndexError:
-    filename_only = 'DNA_1_5.csv' # <-- MODIFIED (renamed for clarity)
+    filename_only = 'DNA_1_5.csv' 
 
-# Create the full, absolute path to the input file # <-- ADDED
+# Create the full, absolute path to the input file 
 full_input_path = os.path.join(script_dir, filename_only)
 
 # Obtain the DNA sequence number and the lenght of the k-mers
-base = filename_only.split('_') # <-- MODIFIED (use the filename, not the full path)
+base = filename_only.split('_')
 
 K_length = base[2][0]
 
 new_filename = base[0] + "_" + base[1]
 
-# Create full paths for the output files # <-- ADDED
+# Create full paths for the output files
 full_png_path = os.path.join(script_dir, f'{new_filename}.png')
 full_text_path = os.path.join(script_dir, f'{new_filename}.text')
 
 
 # Read the data using the full path
-try: # <-- ADDED (Good practice to handle file not found)
+try: 
     data = pd.read_csv(full_input_path)
 except FileNotFoundError:
     print(f"Error: Could not find the file at the specified path: {full_input_path}")
@@ -248,7 +247,7 @@ def plot_graph(graph: nx.MultiDiGraph, filename: str) -> None:
     """
     # Create a new directed graph
     dot = graphviz.Digraph(comment='De Bruijn Graph')
-    dot.attr('node', shape='circle') # Optional: make nodes look nice
+    dot.attr('node', shape='circle') 
 
     # Add all nodes from the networkx graph
     for n in graph.nodes():
@@ -387,9 +386,10 @@ sequence = construct_dna_sequence(G)
 # Task 8 Save DNA sequence (or save the error message if the sequence
 # was not valid)
 
-def save_output(s: str, full_output_path: str) -> None: # <-- MODIFIED
-    with open(full_output_path, 'w') as file: # <-- MODIFIED
+def save_output(s: str, full_output_path: str) -> None: 
+    with open(full_output_path, 'w') as file: 
         file.write(s)
 
 
-save_output(sequence, full_text_path) # <-- MODIFIED
+save_output(sequence, full_text_path) 
+
